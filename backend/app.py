@@ -2,9 +2,13 @@ import os
 import requests
 import zipfile
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins for now, or specify your Vercel domain
+
 
 MODEL_DIR = "models/fine_tuned_model"
 
