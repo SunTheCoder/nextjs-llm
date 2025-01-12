@@ -7,7 +7,7 @@ from flask_cors import CORS
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all origins for now, or specify your Vercel domain
+CORS(app, resources={r"/*": {"origins": "https://custom-llm-lvvzz6gni-suns-projects-fbf4e3bd.vercel.app"}})
 
 
 MODEL_DIR = "models/fine_tuned_model"
