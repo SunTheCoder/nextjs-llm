@@ -1,0 +1,8 @@
+venv
+backend/models/fine_tuned_model/*
+fine_tuned_model.zip
+fine_tuned_model/*
+backend/
+/models/*
+backend/models/fine_tuned_model/checkpoint-6/model.safetensors
+backend/models/fine_tuned_model/checkpoint-6/optimizer.pt

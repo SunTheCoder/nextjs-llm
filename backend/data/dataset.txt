@@ -1,0 +1,5 @@
+Q: What is the capital of France?
+A: Paris.
+
+Q: Who wrote Hamlet?
+A: William Shakespeare.
