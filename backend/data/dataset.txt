@@ -1,5 +1,305 @@
-Q: What is the capital of France?
-A: Paris.
+Q: What is the largest planet in our solar system?  
+A: Jupiter.  
 
-Q: Who wrote Hamlet?
-A: William Shakespeare.
+Q: Who painted the Mona Lisa?  
+A: Leonardo da Vinci.  
+
+Q: What is the boiling point of water in Celsius?  
+A: 100 degrees.  
+
+Q: Who discovered penicillin?  
+A: Alexander Fleming.  
+
+Q: What is the speed of light?  
+A: Approximately 299,792 kilometers per second.  
+
+Q: Who was the first president of the United States?  
+A: George Washington.  
+
+Q: What is the chemical symbol for gold?  
+A: Au.  
+
+Q: What is the tallest mountain in the world?  
+A: Mount Everest.  
+
+Q: Who developed the theory of relativity?  
+A: Albert Einstein.  
+
+Q: What is the main ingredient in guacamole?  
+A: Avocado.  
+
+Q: How many continents are there on Earth?  
+A: Seven.  
+
+Q: What is the capital of Japan?  
+A: Tokyo.  
+
+Q: Who is the author of the Harry Potter series?  
+A: J.K. Rowling.  
+
+Q: What is the largest ocean on Earth?  
+A: The Pacific Ocean.  
+
+Q: What is the smallest unit of life?  
+A: The cell.  
+
+Q: Who directed the film *Titanic*?  
+A: James Cameron.  
+
+Q: What is the square root of 64?  
+A: 8.  
+
+Q: What element has the atomic number 1?  
+A: Hydrogen.  
+
+Q: In what year did the Titanic sink?  
+A: 1912.  
+
+Q: What is the capital of Italy?  
+A: Rome.  
+
+Q: How’s the weather today?
+A: It’s sunny and warm.
+
+Q: What’s your favorite hobby?
+A: I love reading books.
+
+Q: Have you seen the latest Marvel movie?
+A: Yes, it was amazing!
+
+Q: What’s for dinner tonight?
+A: I’m thinking of making spaghetti.
+
+Q: Do you like coffee or tea?
+A: I prefer tea, especially green tea.
+
+Q: How was your weekend?
+A: It was relaxing. I went for a hike.
+
+Q: What kind of music do you listen to?
+A: I enjoy pop and classical music.
+
+Q: Do you have any pets?
+A: Yes, I have a dog named Max.
+
+Q: Have you ever been to Paris?
+A: Not yet, but I’d love to go someday.
+
+Q: What’s your go-to comfort food?
+A: Definitely pizza.
+
+Q: What book are you reading right now?
+A: I’m reading The Hobbit by J.R.R. Tolkien.
+
+Q: Do you like cooking?
+A: Yes, it’s one of my favorite things to do!
+
+Q: What’s your dream vacation spot?
+A: I’d love to visit the Maldives.
+
+Q: Do you play any instruments?
+A: Yes, I play the guitar.
+
+Q: What’s your favorite season?
+A: I love spring. Everything feels fresh and new.
+
+Q: Have you tried yoga before?
+A: Yes, it’s great for relaxing and stretching.
+
+Q: What’s your favorite movie?
+A: I’d have to say The Shawshank Redemption.
+
+Q: Are you more of a morning person or a night owl?
+A: Definitely a night owl.
+
+Q: Do you prefer the beach or the mountains?
+A: I’d pick the mountains any day.
+
+Q: What’s the most popular pet in the world?
+A: Dogs are the most popular pet worldwide.
+
+Q: How often should I walk my dog?
+A: Most dogs need at least one 30-minute walk per day, but it depends on the breed.
+
+Q: Can cats drink milk?
+A: While cats might enjoy milk, many are lactose intolerant, so it’s best to avoid it.
+
+Q: How long do hamsters live?
+A: Hamsters typically live 2 to 3 years.
+
+Q: What’s the best way to train a puppy?
+A: Use positive reinforcement, like treats and praise, to encourage good behavior.
+
+Q: Are goldfish easy to take care of?
+A: Yes, goldfish are low-maintenance, but they need a clean tank and proper feeding.
+
+Q: How do I know if my cat is happy?
+A: A happy cat often purrs, kneads, and has a relaxed posture.
+
+Q: Can parrots talk?
+A: Yes, some parrots can mimic human speech, especially African Greys and Budgies.
+
+Q: How often should I clean my pet’s cage?
+A: Small pet cages, like those for hamsters or guinea pigs, should be cleaned weekly.
+
+Q: Do rabbits need to go to the vet?
+A: Yes, rabbits need regular check-ups and vaccinations, just like other pets.
+
+Q: Why do dogs wag their tails?
+A: Dogs wag their tails to communicate emotions, like excitement or happiness.
+
+Q: Can I keep a turtle as a pet?
+A: Yes, but turtles require specific care, like a heated tank and UVB lighting.
+
+Q: What’s the best food for a cat?
+A: High-quality cat food with real meat as the first ingredient is ideal.
+
+Q: How do I stop my dog from barking excessively?
+A: Identify the cause of barking and use training techniques, like redirecting their attention or using commands.
+
+Q: Do guinea pigs need a companion?
+A: Yes, guinea pigs are social animals and thrive with a companion.
+
+Q: How can I tell if my fish is sick?
+A: Look for signs like loss of appetite, lethargy, or unusual spots on their body.
+
+Q: Why do cats love to chase lasers?
+A: The movement of the laser mimics the motion of prey, triggering their hunting instinct.
+
+Q: How often should I groom my dog?
+A: Grooming depends on the breed, but most dogs benefit from weekly brushing.
+
+Q: What’s the best pet for someone with allergies?
+A: Hypoallergenic dogs like Poodles or hairless cats like Sphynx are good options.
+
+Q: What is the definition of a family?
+A: A family is a group of people related by blood, marriage, or a strong bond of love and support.
+
+Q: How can I spend more quality time with my family?
+A: You can plan regular activities like family dinners, movie nights, or outdoor trips.
+
+Q: Why are family traditions important?
+A: Family traditions help strengthen bonds, create lasting memories, and give a sense of belonging.
+
+Q: What’s the best way to resolve family conflicts?
+A: Open and respectful communication, active listening, and empathy can help resolve conflicts.
+
+Q: How can I show appreciation for my family?
+A: Express gratitude, spend time together, and acknowledge their efforts and support.
+
+Q: Why is family support important?
+A: Family support provides emotional security, helps during tough times, and boosts confidence.
+
+Q: What’s a good family activity for weekends?
+A: Going on a picnic, playing board games, or hiking together are great options.
+
+Q: How can I build a stronger bond with my siblings?
+A: Spend time together, share hobbies, and communicate openly about your feelings.
+
+Q: What role do grandparents play in a family?
+A: Grandparents often provide wisdom, support, and help preserve family traditions.
+
+Q: How do family dynamics change over time?
+A: Family dynamics evolve as children grow, relationships mature, and roles shift with age and life events.
+
+Q: Why is family communication important?
+A: Good communication fosters understanding, trust, and helps solve problems effectively.
+
+Q: How do I teach my kids about family values?
+A: Lead by example, share stories, and involve them in family traditions and discussions.
+
+Q: What makes a happy family?
+A: Love, mutual respect, effective communication, and shared experiences contribute to a happy family.
+
+Q: How do I balance work and family life?
+A: Set boundaries, prioritize family time, and communicate your schedule clearly.
+
+Q: What’s a fun way to celebrate family milestones?
+A: You can host a party, take a family trip, or create a scrapbook of memories.
+
+Q: Why do families have different structures?
+A: Families vary based on cultural, societal, and personal factors, such as single-parent, blended, or extended families.
+
+Q: How can I help my child feel close to their relatives?
+A: Encourage regular visits, video calls, and involve them in family gatherings or traditions.
+
+Q: What’s the role of a parent in a family?
+A: Parents provide love, guidance, support, and help shape their children’s values and behavior.
+
+Q: How can I maintain a strong family connection despite living far apart?
+A: Stay connected through video calls, letters, and planning occasional reunions.
+
+Q: What’s the best way to celebrate a family holiday?
+A: Create a mix of traditional and new activities, involve everyone, and focus on spending time together.
+
+Q: What is the largest land animal?
+A: The African elephant.
+
+Q: How do birds fly?
+A: Birds fly using their wings, which are shaped to create lift when they move through the air.
+
+Q: What is the fastest land animal?
+A: The cheetah, which can run up to 70 mph.
+
+Q: Do all mammals have fur?
+A: Yes, all mammals have some fur or hair at some point in their life, even if it’s minimal.
+
+Q: Why do cats purr?
+A: Cats purr as a way to communicate, show contentment, or even to self-soothe when they’re stressed or in pain.
+
+Q: How do fish breathe underwater?
+A: Fish use their gills to extract oxygen from the water.
+
+Q: What is the lifespan of a turtle?
+A: Some turtles can live over 100 years, especially species like the Galápagos tortoise.
+
+Q: Why do dogs wag their tails?
+A: Dogs wag their tails to express emotions, such as happiness, excitement, or even nervousness.
+
+Q: What animal is known as the "King of the Jungle"?
+A: The lion.
+
+Q: How do penguins stay warm in cold climates?
+A: Penguins have thick feathers and a layer of fat called blubber to insulate them from the cold.
+
+Q: Why do bees buzz?
+A: Bees buzz because their wings beat rapidly, creating the buzzing sound.
+
+Q: How do snakes move without legs?
+A: Snakes use their muscles and scales to slither on the ground by pushing against surfaces.
+
+Q: What is the smallest bird in the world?
+A: The bee hummingbird.
+
+Q: Why do zebras have stripes?
+A: Zebra stripes may help with camouflage, confuse predators, or deter biting insects.
+
+Q: What do pandas eat?
+A: Pandas primarily eat bamboo, though they may occasionally eat other plants or small animals.
+
+Q: How do bats navigate in the dark?
+A: Bats use echolocation, emitting sound waves and listening for the echoes to locate objects.
+
+Q: What animal is known to have the best memory?
+A: Elephants are known for their excellent memory.
+
+Q: Why do frogs croak?
+A: Frogs croak to communicate, especially during mating season to attract a mate.
+
+Q: What is the purpose of a camel's hump?
+A: A camel’s hump stores fat, which provides energy and helps them survive in harsh environments.
+
+Q: Do dolphins sleep?
+A: Yes, dolphins sleep by resting one half of their brain at a time, allowing them to continue surfacing for air.
+
+Q: How do kangaroos carry their babies?
+A: Kangaroos carry their babies, called joeys, in a pouch on their belly.
+
+Q: Why do chameleons change color?
+A: Chameleons change color to communicate, regulate body temperature, or blend into their environment.
+
+Q: What is the loudest animal on Earth?
+A: The blue whale, whose calls can reach up to 188 decibels.
+
+Q: How do octopuses defend themselves?
+A: Octopuses can squirt ink, change color to camouflage, and escape through small spaces.

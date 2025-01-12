@@ -2,17 +2,18 @@ import os
 import requests
 import zipfile
 from flask import Flask, request, jsonify
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
 from flask_cors import CORS
 
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://custom-llm-lvvzz6gni-suns-projects-fbf4e3bd.vercel.app"}})
+CORS(app, origins=["http://localhost:3000"], supports_credentials=True)
 
+# Get absolute path
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, "models/fine_tuned_model")
 
-MODEL_DIR = "models/fine_tuned_model"
-
-S3_URL = "https://sunthecoder-models.s3.us-east-2.amazonaws.com/fine_tuned_model.zip?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMiJHMEUCIDXROUVbzxlQ9x31y%2BIbFB4NmbrTatK1Mhrfi1co78BoAiEAxBX1sYxJLcTdrrN18G%2BFNV8judStbnA7weuidjQEVUkq0AMIyv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw4OTE2MTI1ODcyMzkiDAlKZBly5yCW5hBLAiqkA4z4QeXRUDfpGnxFhX1li38wVXtl9svkuagS6oWRdkL1HRp8beu0BXnOK%2BUAY%2BcZe4Entd%2FQy0%2FriYo3iAF7meDzpZmhuscE6qlelf7X42bCVnXqV5791I%2BThPdJoc7X2EqTv7SmMr5FsZgkQeJLKMXpexwXrPPOE8LXtA4wX7ZXxOs9PqfzCEzjri5ypA2pf9psHLu2JnJtkssvoiVGn83XcojgQL%2FFc9GEVChaWqVBQOL0fG%2F5Y8GMLL7O9IekXvwdvtEXvGbLTp6yxqDM2kbAq4FZssIeT00mpIHeZluMErdH3n4XPjTG9MRJdasOWVvmL0oMHo2UWvIgPjudabiS5oOVB5qkDgg9BS8bMAmNWVABmyPzqi2uFH2IIinhvVdD1LZ5TPsqvDaENOGfbEbfxuPbxbkcCMUXrrSWcfl2rnIyr3Y0moIQbY9EOQIVgGUEXZMch%2BXwU%2Bbrfx7oDtgVypuGZkrRFlZvbxHNVhtjOZZs2PCZYsvcDL7el6Hrn2i2Dywyxk%2FRigaTkBvmYrM7OUNk13A6tXY93D3e%2B%2B%2FlTHGOzDD7k4y8BjrkAjAGqDPIv77SpH3et%2BeL3BstLxSLcp5I5hboY7ExdEyykvsOZZmFR2zJs3%2FtC0YHCK%2FERcHVX8zlplXeBuV6Vhp5YrZkBxMe%2FDjOhnjznGabp5h125r16kFQMWPWG0TQ2G2Lw9jksAp%2F%2FwCuDcqxuyhOhO075vGj%2B4xAC48Rp%2FjjQWQIse72wprt3qq8ZBldDiD3DliEUE3fEV4HkSVyjpl8Tlr%2F1ReHU7y0Xmkxcr4RiSANratji7W%2BodgcXS2jWHA8nSpyvVEFJboKG0TqgANqLtetbMava82iwGXfnP8EezDFzkN%2BFRnYd5y8mKK1R7xP9eu%2BRONL2yvYCZ9H2QggCi0o8QtZehVKMkJnJqHKwxzL1u%2FkondTs5L8xU%2BN9QCjznQd8nkYmPxaLWAK1%2FI6EnxgM8ChIrHoYI%2FDUgkcazRxxZ6gSHK6Po%2FzWZkNzDqBVQtAOxb8m5nsfyoM0V68g2so&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA47GCAMTT42PAHXDR%2F20250112%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250112T004312Z&X-Amz-Expires=43200&X-Amz-SignedHeaders=host&X-Amz-Signature=f58285fe043e9d558fd287531e60ebd55c869b38ef15ba64d4be3bea11c71b40"
+S3_URL = "https://sunthecoder-models.s3.us-east-2.amazonaws.com/fine_tuned_model.zip?response-content-disposition=inline&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMiJHMEUCIQC1mitNk46ni0ndRw%2BwjKnxctFrsbmWESJf4ZJdg4ZnwgIgVn8GR03hw%2BCXOiVD%2B5khK%2BvnbH%2BKGv%2BD2BEOPkumuS0q0AMIzP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw4OTE2MTI1ODcyMzkiDAPT0fmCoF%2FwGwKdECqkA8JNDdj1Ys5d%2FYfFlFTMxicc5kw7s3CYlucUgbvhBeNImcn8hoSd2Wr87HIjmNm3rIMfFBycyuA1YN0E1yZai6njMKCN6ItAU4yHSaG%2FTij9nXGX48e7%2BZacCAfkBxvbL2WGjQyWHjVeF2HlyKr8kynGjtT3EICpU9ju58PnvBJbTyaUzEb21PZgECboU%2BPA1CT4y9goUTp2zOhQ6FNAVnSEc4R9FjOURzQsOaJyzyHpvlDL%2FmePWLSvTjfR9XVbX492ZapWfXXetJjCdXkSTxoo%2FGylGDaU9nfqUEoi%2BuPLcaeMAIli3OedzgD%2BTcqUxB3tKRQZYE5tsCqSne87tU91dSYd7nSN23rarjHqip0E4YH071Fxj%2Bfs23g6w6KWdUZ%2BPwfM5WD20kl%2B%2FJJc%2B8V54zqRkhcCn4%2F%2BZdrA%2FveXlfRUPhFmG66XXBluiPzpuuP0HBVDt3tEmKd8tjqRaqxHu8PEq5UBzFN3ZTsdO5RLjRs8zdeKRC5BtlXWqsb3ohNQCsbT%2Bv87Zg%2BKoXhJO2UrHZJc%2BM0txdhKGhitcTB1OejaTzD7k4y8BjrkAmgpBQqd9dyDbRmmWl%2BDMjtvQOAF58NkJIehUBFrCAooezt74GOJjmK%2FFK5pWmZgFRbu439gLv4Rnnj3HSVDczK396KEYZRsLdf1RDYmoXmcXdt9RaHVslI74MZ6jR8zyhvB7fx1YN21ZfsVjJOEpdU0%2BxM80mlpUhR7SiLgMKqoeTRcgPZyBq5UnJPw55VdiH106kVm3ovPk7Y50JRc4ZPRbf%2BuW%2Fq6%2BXqMAVAllz%2Fe05Ac1%2F1YCysfFnYJZO7rzSGxz7MAD2QLGbVArk907%2FBS6eHfEt1%2F2WL75lL9xtGArecjiFWNSDwpne8jc3J9PF6oP0tknoC50ncHCcRzNttbPw%2F9UnyFdNHECrZG%2BdIC9j4t7qEIy46Yed7Y%2F81BtR4V059ZrAj0z%2Fm8bLdB5tX%2BZhr%2F1tSseGOaXqkRA38kBnlhGsFfQynhq0CchLiJFFEpaAf7WL26RW9zy7%2BB1UYw5Grb&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIA47GCAMTTS2EHKDNX%2F20250112%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250112T030924Z&X-Amz-Expires=43200&X-Amz-SignedHeaders=host&X-Amz-Signature=73734dfc2ae86707796ca2e9eac03d48314a03fb2b23a08c740262b0fdb9c7cd"
 ZIP_FILE = "fine_tuned_model.zip"
 
 # Ensure the model is downloaded and ready
@@ -47,13 +48,26 @@ tokenizer = GPT2Tokenizer.from_pretrained(MODEL_DIR)
 def generate_text():
     data = request.json
     prompt = data.get("prompt", "")
-    inputs = tokenizer.encode(prompt, return_tensors="pt")
-    outputs = model.generate(inputs, max_length=100, num_return_sequences=1)
+    
+    # Tokenize with padding and attention mask
+    inputs = tokenizer(prompt, return_tensors="pt", padding=True, truncation=True)
+    
+    # Generate text
+    outputs = model.generate(
+        inputs["input_ids"], 
+        attention_mask=inputs["attention_mask"], 
+        max_length=100, 
+        num_return_sequences=1,
+        temperature=0.7,  # Controls randomness; lower is more focused, higher is more random
+        # top_k=50,         # Limits sampling to the top K tokens
+        # top_p=0.9,        # Nucleus sampling (considering top P cumulative probability)
+        pad_token_id=tokenizer.eos_token_id
+)
+
+    
     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
     return jsonify({"response": response})
 
-if __name__ == '__main__':
-    import os
-    port = int(os.environ.get("PORT", 5000))  # Use the PORT environment variable if provided
-    app.run(debug=True, host='0.0.0.0', port=port)
 
+if __name__ == '__main__':
+    app.run(debug=True)

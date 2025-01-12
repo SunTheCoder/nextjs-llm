@@ -10,12 +10,21 @@ const LLM = () => {
 
   const handleGenerate = async () => {
     try {
-      const res = await axios.post('https://nextjs-llm-play.onrender.com', { prompt });
+      const res = await axios.post(
+        'http://127.0.0.1:5000/generate', // Include the '/generate' endpoint
+        { prompt }, // Send the prompt as the request body
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
       setResponse(res.data.response);
     } catch (error) {
-      console.error("Error generating text:", error);
+      console.error('Error generating text:', error);
     }
   };
+  
 
   return (
     <Box p={4}>
